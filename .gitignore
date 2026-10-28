@@ -1,0 +1,5 @@
+/sources/
+/build/
+/release/
+__pycache__/
+*.pyc

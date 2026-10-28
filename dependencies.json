@@ -1,0 +1,16 @@
+[
+  {
+    "path": "underworld-exhumed",
+    "url": "https://github.com/abedegno/underworld-exhumed.git",
+    "revision": "e5deadd6945b492636aadccc14f52caa908b4186",
+    "patch": "patches/underworld-exhumed-expansion.patch",
+    "patch_sha256": "9325ea04bef7c1c6e2610bb8fe6e599c77db207a4c21e4e828e12ab076b2ba68"
+  },
+  {
+    "path": "underworld-exhumed/exhume",
+    "url": "https://github.com/abedegno/Exhume.git",
+    "revision": "a34316463c230bafa3d4f0aa3b894a574e5fc738",
+    "patch": "patches/exhume-expansion.patch",
+    "patch_sha256": "f8104e1c01ada18e7dbcd699f992ecdcf9fc153adf605f836264d9b35b16c5f1"
+  }
+]

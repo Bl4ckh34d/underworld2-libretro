@@ -1,0 +1,56 @@
+diff --git a/runtime/port/mem/frame.c b/runtime/port/mem/frame.c
+index c223eea..ae836f0 100644
+--- a/runtime/port/mem/frame.c
++++ b/runtime/port/mem/frame.c
+@@ -68,16 +68,24 @@ unsigned char *port_frame_alloc(void)
+ #include <stdio.h>
+ #include <sys/mman.h>
+ #include <unistd.h>
++#ifdef __ANDROID__
++#include <sys/syscall.h>
++#endif
+ 
+ unsigned char *port_frame_alloc(void)
+ {
+     char name[64];
+     unsigned char *base;
+     int fd;
++#ifdef __ANDROID__
++    fd = (int)syscall(__NR_memfd_create, "underworld-ems", 1);
++    if (fd < 0) return NULL;
++#else
+     snprintf(name, sizeof name, "/exhume-ems-%d", (int)getpid());
+     fd = shm_open(name, O_RDWR | O_CREAT | O_EXCL, 0600);
+     if (fd < 0) return NULL;
+     shm_unlink(name);
++#endif
+     if (ftruncate(fd, 0x10000)) { close(fd); return NULL; }
+     base = mmap(NULL, 0x24000, PROT_NONE, MAP_ANON | MAP_PRIVATE, -1, 0);
+     if (base == MAP_FAILED) { close(fd); return NULL; }
+diff --git a/runtime/port/x86/asmrt.h b/runtime/port/x86/asmrt.h
+index 95afc75..02c44a0 100644
+--- a/runtime/port/x86/asmrt.h
++++ b/runtime/port/x86/asmrt.h
+@@ -440,7 +440,7 @@ void asm_run_far(uint16_t seg, uint16_t off);
+ void asm_run_near(uint16_t seg, uint16_t off);
+ /* The machine's state, for C that calls translated code from inside other translated code
+    (glue that reaches it again): saved before and put back after, but for what the C returns. */
+-struct asm_state {
++struct __attribute__((packed)) asm_state {
+     uint32_t ax, bx, cx, dx, si, di, bp;
+     uint16_t sp, ds, es, ss, fs, gs;
+     uint8_t cf, zf, sf, of, df;
+diff --git a/runtime/replay/replay.c b/runtime/replay/replay.c
+index 52f4046..0b65f03 100644
+--- a/runtime/replay/replay.c
++++ b/runtime/replay/replay.c
+@@ -1321,7 +1321,8 @@ static uint32 misc(int tag, uint32 v, int dword)
+     got = get_byte(S_MISC);
+     if (got < 0) rp_finish(CK_END);
+     if (got != tag) desync(S_MISC, got);
+-    return dword ? get_dword(S_MISC) : get_word(S_MISC);
++    { uint32 result = dword ? get_dword(S_MISC) : get_word(S_MISC);
++    return result; }
+ }
+ 
+ int32 far rp_walltime(void)

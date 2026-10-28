@@ -1,0 +1,14 @@
+{
+  "entry": {
+    "path": "/storage/YOUR_USB_ID/Roms/pcdata/UW2/UW2.EXE",
+    "label": "Ultima Underworld II - Labyrinth of Worlds (Native)",
+    "core_path": "/data/user/0/com.retroarch.ra32/cores/underworld2_libretro_android.so",
+    "core_name": "Underworld II Native",
+    "crc32": "00000000|crc",
+    "db_name": "PC - Native Ports.lpl"
+  },
+  "files": {
+    "/sdcard/RetroArch/config/Underworld II Native/UW2.cfg": "system_directory = \"/storage/YOUR_USB_ID/Roms/pcdata/UW2\"\nsavefile_directory = \"/sdcard/RetroArch/saves/UW2\"\nsavefiles_in_content_dir = \"false\"\nsavestates_in_content_dir = \"false\"\nvideo_driver = \"vulkan\"\nvideo_threaded = \"true\"\nvideo_vsync = \"true\"\ninput_libretro_device_p1 = \"1\"\ninput_auto_game_focus = \"0\"\ninput_poll_type_behavior = \"0\"\ninput_save_state_btn = \"nul\"\ninput_load_state_btn = \"nul\"\n",
+    "/sdcard/RetroArch/config/remaps/Underworld II Native/UW2.rmp": "input_libretro_device_p1 = \"1\"\ninput_libretro_device_p2 = \"1\"\ninput_libretro_device_p3 = \"1\"\ninput_libretro_device_p4 = \"1\"\ninput_libretro_device_p5 = \"1\"\ninput_libretro_device_p6 = \"1\"\ninput_libretro_device_p7 = \"1\"\ninput_libretro_device_p8 = \"1\"\ninput_player1_analog_dpad_mode = \"0\"\ninput_player2_analog_dpad_mode = \"0\"\ninput_player3_analog_dpad_mode = \"0\"\ninput_player4_analog_dpad_mode = \"0\"\ninput_player5_analog_dpad_mode = \"0\"\ninput_player6_analog_dpad_mode = \"0\"\ninput_player7_analog_dpad_mode = \"0\"\ninput_player8_analog_dpad_mode = \"0\"\ninput_remap_port_p1 = \"0\"\ninput_remap_port_p2 = \"1\"\ninput_remap_port_p3 = \"2\"\ninput_remap_port_p4 = \"3\"\ninput_remap_port_p5 = \"4\"\ninput_remap_port_p6 = \"5\"\ninput_remap_port_p7 = \"6\"\ninput_remap_port_p8 = \"7\"\ninput_turbo_allow_dpad = \"false\"\ninput_turbo_bind = \"-1\"\ninput_turbo_button = \"0\"\ninput_turbo_duty_cycle = \"0\"\ninput_turbo_enable = \"true\"\ninput_turbo_mode = \"1\"\ninput_turbo_period = \"1\"\n"
+  }
+}

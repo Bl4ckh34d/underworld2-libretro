@@ -1,0 +1,16 @@
+[
+  {
+    "path": "include/libretro.h",
+    "url": "https://github.com/mlcodewerks/nblood-libretro.git",
+    "revision": "5c3bd3fd3ab8fdaf37c38f569b704a122792d481",
+    "source_path": "libretro/libretro.h",
+    "sha256": "c928d8f176b4e4bc45ee2a41ef236d25cc19e9bc2abc2e2e4c32cf08d6423801"
+  },
+  {
+    "path": "include/minicoro.h",
+    "url": "https://github.com/mlcodewerks/nblood-libretro.git",
+    "revision": "5c3bd3fd3ab8fdaf37c38f569b704a122792d481",
+    "source_path": "source/build/include/minicoro.h",
+    "sha256": "476c8f593a46eaa6d12fef397de738317a5c9a0566b3abcd9cbe5985822c4a11"
+  }
+]

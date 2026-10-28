@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-29",
+  "target": "Android 11 ARMv7, NDK r27d, 32-bit RetroArch integration",
+  "artifact": "underworld2_libretro_android.so",
+  "bytes": 2812100,
+  "sha256": "03e247b3b161b6f1f6fe887bac6d734bf4d429f3a8632c0ed6e6839fef9c641f",
+  "build": "passed",
+  "patches": "forward check against pristine pinned index; reverse check against working source passed",
+  "reset_fixture": {
+    "raw_exit": 5,
+    "raw_result": "cycle 1 expected 7 got 14",
+    "wrapped_exit": 0,
+    "wrapped_result": "10 resets, callbacks and controller device preserved"
+  },
+  "runtime_checks": [
+    {
+      "test": "reset-title-guard",
+      "exit": 0,
+      "evidence": [
+        "FRAME 180 shutdown=0 seconds=4.881 speed=0.61x PCM=132300 audible_delta=124969",
+        "FRAME 220 shutdown=0 seconds=0.230 speed=2.90x PCM=161700 audible_delta=39668",
+        "FRAME 400 shutdown=0 seconds=5.011 speed=0.60x PCM=294000 audible_delta=124969",
+        "FRAME 440 shutdown=0 seconds=0.239 speed=2.79x PCM=323400 audible_delta=39668",
+        "CLOSED",
+        "Native restart: fresh engine loaded"
+      ]
+    }
+  ]
+}
